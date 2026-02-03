@@ -20,3 +20,11 @@ Example: 18.1% https://data.census.gov/profile/Tucson_city,_Arizona?g=160XX00US0
 IV Median Rent = $$:  ACS B25064, data provides county, year, and Median Gross Rent in $$ 
 
 My final data set would be ‘panel data’, multiple CoCs across multiple years
+Data Transparency Statement
+Data Availability: All data used in this analysis are publicly available from federal sources. No restricted-access data are used.
+Raw Data Access:
+
+HUD Exchange data: https://www.hudexchange.info/programs/coc/
+Census ACS: https://data.census.gov
+
+Note: HUD Exchange data availability depends on federal government operations. 
