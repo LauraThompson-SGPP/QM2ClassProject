@@ -1,30 +1,55 @@
 # QM2ClassProject
-Govt Funding Impact on Homelessness
-Research Question ideas: 
-Version 1: “Does HUD CoC funding reduce homelessness”
-Version 2: “What is the marginal effect of CoC funding per capita on Point in Time homelessness counts? “
+# Does Housing Capacity Reduce Homelessness? Evidence from HUD Continuum of Care Data
 
-Empirical Strategy: Test whether variation in CoC funding levels is associated with reduced community-level homelessness rates, controlling for poverty, median rent, substance abuse, and mental health services access. I will select 3 to 5 counties, across a handful of years, depending on available data. For example, 2015-2023 would offer a pre/post COVID timeframe.  Note, not all ‘Counties’ align with CoCs so I would select CoCs that best fit county geographics.  
- 
-DV = Homelessness rate per 10,000 population
+## Research Question
 
-IVs: HUD funding (main IV), poverty rate, median rent, (I’d like to use substance abuse and mental health access, but I’m not sure where to get data yet.)  I will also need to address funding sources outside of HUD that may impact a CoC’s effectiveness.
+**Does the availability of Permanent Supportive Housing (PSH) beds reduce community homelessness rates?**
 
-Data Sources: 
+## Theory
 
-IV HUD Funding*:  (*note: pending current CR, website will shut down if govt is shut down.) Under normal circumstances, HUD funding data is open source and available.  HUD also has a cross walk “CoC to County Crosswalk” so I can align the data with the poverty and rent data that is pulled from data.census.gov. 
+**Housing First Theory** posits that stable housing is a prerequisite for addressing other challenges (mental health, substance use, employment) that contribute to chronic homelessness. Permanent Supportive Housing (PSH) operationalizes this theory by combining long-term housing subsidies with wraparound services.
 
-IV Poverty Rate = %:  ACS S1701, data provides a county, year, and percentage. 
-Example: 18.1% https://data.census.gov/profile/Tucson_city,_Arizona?g=160XX00US0477000
+If Housing First theory is correct, communities with greater PSH capacity should have lower rates of homelessness because PSH removes people from homelessness permanently, targets the chronically homeless who cycle repeatedly through shelters, and frees emergency shelter capacity for newly homeless individuals.
 
-IV Median Rent = $$:  ACS B25064, data provides county, year, and Median Gross Rent in $$ 
+## Hypotheses
 
-My final data set would be ‘panel data’, multiple CoCs across multiple years
-Data Transparency Statement
-Data Availability: All data used in this analysis are publicly available from federal sources. No restricted-access data are used.
-Raw Data Access:
+- **H1:** PSH bed capacity is negatively associated with community homelessness rates
+- **H2:** Emergency Shelter bed capacity has no significant association with homelessness rates
+- **H3:** Rapid Re-Housing bed capacity is negatively associated with homelessness rates, but weaker than PSH
 
-HUD Exchange data: https://www.hudexchange.info/programs/coc/
-Census ACS: https://data.census.gov
+## Data
 
-Note: HUD Exchange data availability depends on federal government operations. 
+**Unit of Analysis:** Continuum of Care (CoC)
+
+**Year:** 2023 (cross-sectional)
+
+**Sources:**
+
+| Data | Source |
+|------|--------|
+| PIT Counts by CoC | [HUD USER AHAR 2023](https://www.huduser.gov/portal/datasets/ahar/2023-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html) |
+| Housing Inventory Count by CoC | [HUD USER AHAR 2023](https://www.huduser.gov/portal/datasets/ahar/2023-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html) |
+
+### Data Download Instructions
+
+1. Go to: https://www.huduser.gov/portal/datasets/ahar/2023-ahar-part-1-pit-estimates-of-homelessness-in-the-us.html
+2. Download:
+   - `2007-2023-PIT-Counts-by-CoC.xlsb`
+   - `2007-2023-HIC-Counts-by-CoC.xlsx`
+3. Place both files in the `data/raw/` folder
+
+## Variables
+
+### Dependent Variable (Continuous)
+
+| Variable | Description | Calculation |
+|----------|-------------|-------------|
+| `homeless_rate` | Homelessness rate per 10,000 population | (Total PIT Count ÷ CoC Population) × 10,000 |
+
+### Independent Variables (Continuous)
+
+| Variable | Description | Expected Sign |
+|----------|-------------|---------------|
+| `psh_beds_pc` | PSH beds per 10,000 population | Negative (−) |
+| `rrh_beds_pc` | RRH beds per 10,000 population | Negative (−) |
+| `es_beds_pc` | Emergency Shelter beds per 10,000 population | Null (0) |
