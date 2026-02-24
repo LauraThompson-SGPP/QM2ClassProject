@@ -55,3 +55,6 @@ If Housing First theory is correct, communities with greater PSH capacity should
 | `es_beds_pc` | Emergency Shelter beds per 10,000 population | Null (0) |
 
 homeless_rate = β₀ + β₁(psh_beds_pc) + β₂(rrh_beds_pc) + β₃(es_beds_pc) + ε
+
+test update Feb 23
+
