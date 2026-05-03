@@ -1,0 +1,11 @@
+
+t test of coefficients:
+
+             Estimate Std. Error t value  Pr(>|t|)    
+(Intercept)  6.644275   3.174845  2.0928   0.03705 *  
+psh_beds_pc -0.046084   0.230273 -0.2001   0.84149    
+rrh_beds_pc  0.456297   0.613214  0.7441   0.45728    
+es_beds_pc   1.156861   0.201266  5.7479 1.894e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+

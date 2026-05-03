@@ -1,0 +1,5 @@
+assumption,test,statistic,p_value
+Homoskedasticity,Breusch-Pagan,100.63836350734935,1.1330047204180063e-21
+Homoskedasticity,NCV (Cook-Weisb.),252.78669937987684,6.411022087126973e-57
+Normality,Shapiro-Wilk,0.7738957981081068,2.4678975047119644e-22
+Specification,Ramsey RESET,35.14586447524282,1.083168491038757e-14
