@@ -7,8 +7,7 @@
 # ---- Packages ----
 pkgs <- c(
   "tidyverse",   # dplyr, ggplot2, tidyr, readr, stringr
-  "readxl",      # .xlsx
-  "readxlsb",    # .xlsb (HUD PIT file)
+  "readxl",      # .xlsx (handles both HIC and PIT now)
   "janitor",     # clean_names()
   "here",        # project-relative paths
   "car",         # vif(), ncvTest()
